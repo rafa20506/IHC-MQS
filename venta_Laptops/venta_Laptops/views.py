@@ -13,6 +13,11 @@ def saludo(request):
     return HttpResponse(documentoMostrar)  # el elemento que mostrara la paguina o web
 
 
+
+
+
+
+
 def despedida(request, nombre):   # lo mismo de arriba pero con parametros
     documento = open("../venta_Laptops/venta_Laptops/vistas/index.html")   # la direccion relativa de los archivos html, css "vistas"
     
