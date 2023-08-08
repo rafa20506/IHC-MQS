@@ -13,7 +13,16 @@ def saludo(request):
     return HttpResponse(documentoMostrar)  # el elemento que mostrara la paguina o web
 
 
+def prueba(request):
+    documento = open("../venta_Laptops/venta_Laptops/vistas/front2.html")   # la direccion relativa de los archivos html, css "vistas"
+    
+    plt = Template(documento.read())  #copiar siempre
+    documento.close()               #copiar siempre
 
+    ctx = Context()                 #copiar siempre
+    documentoMostrar = plt.render(ctx) #copiar siempre
+
+    return HttpResponse(documentoMostrar)  # el elemento que mostrara la paguina o web
 
 
 
