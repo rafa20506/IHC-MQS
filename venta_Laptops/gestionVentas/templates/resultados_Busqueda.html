@@ -1,0 +1,25 @@
+<html>
+    
+    <body>
+        <p> Estas buscando: <strong> {{query}}</strong> </p>
+          
+        {% if articulos %}
+            <p> Productos encontrados: {{articulos|length}} articulos</p>
+
+            <ul>
+                {% for articulo in articulos %}
+                    <li>
+                        {{articulo.marca}}
+
+                    </li>
+                {% endfor%}
+
+            </ul>
+        {% else %}
+            <p> No esta el articulo encontrado</p>
+        {% endif %}
+    
+    
+    </body>
+
+</html>
