@@ -1,11 +1,12 @@
+
 <html>
 
 <head>
 
-
+  {% load static%}
 
     <!-- Bootstrap -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static ' vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
      <!-- Fonts -->
     
@@ -14,14 +15,14 @@
      
 
     <!-- Styles -->
-    <link href="/css/gestion.css" rel="stylesheet">
+    <link href="{% static 'css/gestion.css' %}" rel="stylesheet">
 </head>
 
 <body>
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       
-        <span class="site-heading-lower">Gestión de Pedidos</span>
+        <span class="site-heading-lower">Server</span>
       </h1>
 
 
@@ -38,16 +39,16 @@
             <a class="nav-link text-uppercase text-expanded" href="home.html">Inicio</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="servicios.html">Servicios</a>
+            <a class="nav-link text-uppercase text-expanded" href="servicios.html">Laptops</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="tienda.html">Tienda</a>
+            <a class="nav-link text-uppercase text-expanded" href="tienda.html">Ventas</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="contacto.html">Contacto</a>
+            <a class="nav-link text-uppercase text-expanded" href="contacto.html">Facturas</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="blog.html">Blog</a>
+            <a class="nav-link text-uppercase text-expanded" href="blog.html">Vacio</a>
           </li>
          
         </ul>
@@ -60,7 +61,7 @@
    <section class="page-section clearfix">
     <div class="container">
       <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/img/principal.jpg" alt="">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'img/principal.jpg' %}" alt="">
         <div class="intro-text left-0 text-center bg-faded p-5 rounded">
           <h2 class="section-heading mb-4" >
             <span class="section-heading-upper">Puntualidad</span>
@@ -127,8 +128,8 @@
 	</footer>
 
     <!-- Bootstrap -->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
 

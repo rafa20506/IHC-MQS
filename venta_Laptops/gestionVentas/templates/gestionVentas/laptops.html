@@ -1,0 +1,51 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-inicio.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Handjet&display=swap" rel="stylesheet">
+    <title>Inicio</title>
+</head>
+<body class="inicio">
+    <header>
+        <h1>Server Web</h1>
+        <section class="login">
+            <p class="name-user">Nombre usuario</p>
+            <a href="#">Cerrar Sesión</a>
+            <input type="text" class="search-input" placeholder="Search">
+        </section>
+    </header>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Laptops</a>
+        <a href="#">Ventas</a>
+        <a href="#">Facturas</a>
+        <a href="#">Vacio</a>
+    </nav>
+    <section>
+        <header class="tendencias">Tendencias</header>
+        <section class="containers">
+            <div>
+                <img src="{% static 'img/laptop.jpg' %}" alt="">
+                <p class="atributes">Atributos</p>
+                <a href="#">Comprar</a>
+            </div>
+            <div>
+                <img src="{% static 'img/laptop.jpg' %}" alt="">
+                <p class="atributes">Atributos</p>
+                <a href="#">Comprar</a>
+            </div>
+            <div>
+                <img src="{% static 'img/laptop.jpg' %}" alt="">
+                <p class="atributes">Atributos</p>
+                <a href="#">Comprar</a>
+            </div>
+        </section>
+    </section>
+    <section class="publicidad">
+        Publicidad<br>Alicia a 2 horas<br>Cochabamba
+    </section>
+</body>
+</html>
