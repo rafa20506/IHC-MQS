@@ -33,3 +33,5 @@ def login(request):
     return render(request, "gestionVentas/login.html")
     #return HttpResponse("Home")
 
+def laptops(request):
+    return render(request, "gestionVentas/laptops.html")
