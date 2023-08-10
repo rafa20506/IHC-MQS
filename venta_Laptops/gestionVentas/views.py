@@ -38,3 +38,6 @@ def laptops(request):
 
 def homepi(request):
     return render(request, "gestionVentas/homepi.html")
+
+def prueba(request):
+    return render(request, "gestionVentas/prueba.html")
