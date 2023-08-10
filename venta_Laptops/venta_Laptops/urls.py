@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, include
 from venta_Laptops.views import saludo, despedida,prueba
 from gestionVentas import views
@@ -36,3 +37,18 @@ urlpatterns = [
     path('', views.ladingPage, name='LadingGage'),
     path('home', views.home, name="Home"),
     """
+=======
+from django.urls import path
+from venta_Laptops.views import saludo, despedida,prueba,login,register
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('saludo/', saludo),
+    path('despedida/<nombre>',despedida),
+    path('prueba/', prueba),
+    path('login/', login),
+    path('register/', register),
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+>>>>>>> Rafael
