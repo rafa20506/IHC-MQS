@@ -1,0 +1,105 @@
+/*Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Header*/
+header {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.login {
+    /*     Top-Rigth-Bottom-Left*/
+    margin-top: 100px;
+    margin-right: 50px;
+    position: relative;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+h1 {
+    margin-left: 20px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+header input {
+    height: 25px;
+}
+
+/*Nav*/
+nav {
+    position: absolute;
+}
+nav * {
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 30px 10px;
+    width: 80px;
+    align-items: center;
+}
+
+/*Contenido*/
+.tendencias {
+    font-size: 30px;
+    border: 0;
+    position: relative;
+    /*     Top-Rigth-Bottom-Left*/
+    margin: 20px 20px 30px 140px;
+    padding-left: 50px;
+}
+
+.containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containers div{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.containers img {
+    height: 150px;
+    width: 200px;
+    margin: 20px;
+    border: 2px solid black;
+}
+
+.atributes {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.containers a {
+    margin: 5px;
+}
+
+/*Publicidad*/
+.publicidad {
+    display: flex;
+    justify-content:flex-end;
+    border: 2px solid black;
+    margin-left: 1200px;
+    margin-right: 50px;
+    padding: 20px;
+}
