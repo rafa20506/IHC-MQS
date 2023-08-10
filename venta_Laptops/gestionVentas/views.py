@@ -17,3 +17,16 @@ def buscar(request):
     else:
         mensaje = "No has introducido nada"
     return HttpResponse(mensaje)
+
+
+
+def ladingPage(request):
+
+    return render(request, "venta_Laptops/ladingPage.html")
+    #return HttpResponse("LadingPage")
+
+def home(request):
+    return render(request, "venta_Laptops/home.html")
+    #return HttpResponse("Home")
+
+
