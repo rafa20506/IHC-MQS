@@ -35,3 +35,6 @@ def login(request):
 
 def laptops(request):
     return render(request, "gestionVentas/laptops.html")
+
+def homepi(request):
+    return render(request, "gestionVentas/homepi.html")
