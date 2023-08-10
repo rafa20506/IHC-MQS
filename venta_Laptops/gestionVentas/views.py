@@ -29,4 +29,7 @@ def home(request):
     return render(request, "gestionVentas/home.html")
     #return HttpResponse("Home")
 
+def login(request):
+    return render(request, "gestionVentas/login.html")
+    #return HttpResponse("Home")
 

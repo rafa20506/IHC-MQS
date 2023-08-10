@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-hbwqy=&9qfg31$jtlp*dbf1hi4j93#6a&o$cmn3sd+lufmrq@o
 DEBUG = True
 
 ALLOWED_HOSTS = []
-STATICFILES_DIRS=[BASE_DIR/ "static" ,"static/"]
+STATICFILES_DIRS=[BASE_DIR/ "gestionVentas/static" ,"gestionVentas/static/"]
 
 # Application definition
 
