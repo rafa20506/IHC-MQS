@@ -22,11 +22,11 @@ def buscar(request):
 
 def ladingPage(request):
 
-    return render(request, "venta_Laptops/ladingPage.html")
+    return render(request, "gestionVentas/ladingPage.html")
     #return HttpResponse("LadingPage")
 
 def home(request):
-    return render(request, "venta_Laptops/home.html")
+    return render(request, "gestionVentas/home.html")
     #return HttpResponse("Home")
 
 
