@@ -14,7 +14,7 @@ urlpatterns = [
     path('prueba', views.prueba, name="Prueba"),
     path('agregar', views.agregar, name="Agregar"),
     path('agregarProducto', views.addProducto, name="AgregarProducto"),
-    path('pruebaLogin', views.pruebaLogin, name= "PruebaLogin")
+    path('pruebaLogin', views.pruebaLogin, name= "PruebaLogin"),
     path('verificar', views.verificar, name="verificar"),# nombre de la direccion tiene que ser el mismo que en viwes
 ]
 
