@@ -10,4 +10,5 @@ urlpatterns = [
     path('login', views.login, name="Login"),
     path('homepi', views.homepi, name="Homepi"),
     path('prueba', views.prueba, name="Prueba"),
+    path('verificar', views.verificar, name="verificar"),# nombre de la direccion tiene que ser el mismo que en viwes
 ]

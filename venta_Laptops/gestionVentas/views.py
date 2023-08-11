@@ -2,6 +2,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from gestionVentas.models import Producto
+from django.contrib.auth import authenticate
+from gestionVentas.models import Usuario
 # Create your views here.
 def busqueda_productos(request):
 
@@ -31,6 +33,10 @@ def home(request):
 
 def login(request):
     return render(request, "gestionVentas/login.html")
+    if "ingresar" in request.POST:
+        return render(request, "gestionVentas/prueba.html")
+    else:
+        return render(request, "gestionVentas/login.html")
     #return HttpResponse("Home")
 
 def laptops(request):
@@ -41,3 +47,17 @@ def homepi(request):
 
 def prueba(request):
     return render(request, "gestionVentas/prueba.html")
+
+def verificar(request):#nombre de la funcion es la misma que en urls
+    
+    
+    if request.GET["correo"] :#revisamos que tenga contenido el campo
+        correo="%r" %request.GET["correo"] # obtenemos el contenido
+        print(correo)
+        contrasenia="%r" %request.GET["contrasenia"]# obtenemos el contenido
+        usuario=Usuario.objects.filter(correo=correo) #consulta la base de datos ("columna" = "ingresado en input")
+        print(usuario)
+        if correo:
+            return render(request, "gestionVentas/prueba.html")#redireccionamiento a otra pagina 
+    else:
+        return render(request, "gestionVentas/login.html")
