@@ -1,3 +1,5 @@
+
+
 const body = document.querySelector("body"),
       modeToggle = body.querySelector(".mode-toggle");
       sidebar = body.querySelector("nav");
@@ -26,3 +28,5 @@ sidebarToggle.addEventListener("click", () => {
         localStorage.setItem("status", "open");
     }
 })
+
+

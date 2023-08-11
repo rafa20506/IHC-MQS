@@ -87,3 +87,4 @@ local_settings.py
 
 .env
 db.sqlite3
+venta_Laptops/gestionVentas/__pycache__/views.cpython-311.pyc
