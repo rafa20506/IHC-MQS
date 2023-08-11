@@ -2,6 +2,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from gestionVentas.models import Producto
+
+from gestionVentas.models import Producto
+
+from .forms import FormularioAgregarPrd
+
 # Create your views here.
 def busqueda_productos(request):
 
@@ -18,7 +23,10 @@ def buscar(request):
         mensaje = "No has introducido nada"
     return HttpResponse(mensaje)
 
-
+def pruebaLogin(request):
+    mensaje ="contraseña: %r " %request.GET["correo"]
+    return render(request,"inicio.html")
+    #return HttpResponse(mensaje)
 
 def ladingPage(request):
 
@@ -34,10 +42,23 @@ def login(request):
     #return HttpResponse("Home")
 
 def laptops(request):
-    return render(request, "gestionVentas/laptops.html")
+    productos = Producto.objects.all()
+    return render(request, "gestionVentas/laptops.html", {"productos":productos})
+
+def agregar(request):
+
+    formulario_prodcuto = FormularioAgregarPrd()
+    return render(request, "gestionVentas/agregar.html",{'miFormulario': formulario_prodcuto})
+    #return render(request, "gestionVentas/agregar.html")
 
 def homepi(request):
     return render(request, "gestionVentas/homepi.html")
 
 def prueba(request):
     return render(request, "gestionVentas/prueba.html")
+
+
+def addProducto(request):
+    formulario_prodcuto = FormularioAgregarPrd()
+    return render(request, "gestionVentas/agregar.html",{'miFormulario': formulario_prodcuto})
+
