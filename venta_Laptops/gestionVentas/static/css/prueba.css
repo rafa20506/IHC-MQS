@@ -1,5 +1,22 @@
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+/*borra en vista movil*/
+@media screen and (max-width: 600px) {
+    .ocultar-div{
+        display:none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .movilTitle{
+        text-align: center;
+    }
+    .movilImg{
+        width: 250px;
+        height: 200px;
+        border-radius: 5px;
+    }
+}
 *{
     margin: 0;
     padding: 0;

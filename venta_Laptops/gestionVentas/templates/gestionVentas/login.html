@@ -19,9 +19,9 @@
             <div class="form login">
                 <div class="form-content">
                     <header>Login</header>
-                    <form action="/pruebaLogin/" method="GET">
+                    <form action="/verificar" method="get"><!--action verificar tiene que ser el mismo que el nombre de la funcion method get es por el cual obtenemos-->
                         <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input" name="correo">
+                            <input type="email" placeholder="Email" class="input" name="correo"><!-- el name es como puedes acer referencia a ello desde la funcion "%r" %request.GET["contrasenia"]-->
                         </div>
                         <div class="field input-field">
                             <input type="password" placeholder="Password" class="password" name="contrasenia">

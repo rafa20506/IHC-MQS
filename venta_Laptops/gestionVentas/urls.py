@@ -15,6 +15,7 @@ urlpatterns = [
     path('agregar', views.agregar, name="Agregar"),
     path('agregarProducto', views.addProducto, name="AgregarProducto"),
     path('pruebaLogin', views.pruebaLogin, name= "PruebaLogin")
+    path('verificar', views.verificar, name="verificar"),# nombre de la direccion tiene que ser el mismo que en viwes
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
