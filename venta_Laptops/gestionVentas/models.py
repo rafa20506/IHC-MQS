@@ -9,6 +9,14 @@ class Producto(models.Model):
     PArea=models.CharField(max_length=30)## gamer, oficinista
     precio=models.FloatField()
     color=models.CharField(max_length=10)
+    imagen=models.ImageField(upload_to='productos/', default='default.jpg')
+    
+    class Meta:
+        verbose_name= 'producto'
+        verbose_name_plural='productos'
+
+    def __str__(self):
+        return self.serialNumber
 
 class Venta(models.Model):
     vSerialNumber=models.CharField(max_length=20)

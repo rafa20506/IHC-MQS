@@ -19,19 +19,23 @@
             <div class="form login">
                 <div class="form-content">
                     <header>Login</header>
-                    <form action="#">
+                    <form action="/pruebaLogin/" method="GET">
                         <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
+                            <input type="email" placeholder="Email" class="input" name="correo">
                         </div>
                         <div class="field input-field">
-                            <input type="password" placeholder="Password" class="password">
+                            <input type="password" placeholder="Password" class="password" name="contrasenia">
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
                         <div class="form-link">
                             <a href="#" class="forgot-pass">Forgot password?</a>
                         </div>
                         <div class="field button-field">
-                            <button>Login</button>
+                            
+                            <input type="submit" name="verificar">
+                            
+                            <!--<button>Login</button>-->
+
                         </div>
                     </form>
                     <div class="form-link">
