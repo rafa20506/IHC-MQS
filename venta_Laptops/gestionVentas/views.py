@@ -1,6 +1,6 @@
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from gestionVentas.models import Producto
 
 from gestionVentas.models import Producto
@@ -68,7 +68,7 @@ def addProducto(request):
     formulario_prodcuto = FormularioAgregarPrd()
     return render(request, "gestionVentas/agregar.html",{'miFormulario': formulario_prodcuto})
 
-def verificar(request):#nombre de la funcion es la misma que en urls
+"""def verificar(request):#nombre de la funcion es la misma que en urls
     
     
     if request.GET["correo"] :#revisamos que tenga contenido el campo
@@ -76,8 +76,34 @@ def verificar(request):#nombre de la funcion es la misma que en urls
         print(correo)
         contrasenia="%r" %request.GET["contrasenia"]# obtenemos el contenido
         usuario=Usuario.objects.filter(correo=correo) #consulta la base de datos ("columna" = "ingresado en input")
-        print(usuario)
-        if correo:
+        
+
+        print(len(usuario))
+        if 1 == len(usuario):
             return render(request, "gestionVentas/prueba.html")#redireccionamiento a otra pagina 
+        else:
+            print("dasda")
+            return HttpResponse('hola')   
     else:
         return render(request, "gestionVentas/login.html")
+"""    
+def verificar(request):
+    if "correo" in request.GET and "contrasenia" in request.GET:
+        correo = request.GET["correo"]
+        contraseniaa  = request.GET["contrasenia"]
+        
+        usuario = Usuario.objects.filter(correo=correo)
+        
+        if usuario.exists():
+            # Aquí puedes realizar la verificación de la contraseña de manera segura
+            if usuario[0].contrasenia == contraseniaa:
+                #return HttpResponseRedirect("{% url 'Prueba' %}")  # Redireccionar a otra página
+                return render(request, "gestionVentas/prueba.html")
+            else:
+                print("Contraseña incorrecta")
+        else:
+            print("Usuario no encontrado")
+    else:
+        print("Parámetros faltantes")
+    
+    return HttpResponse('Error en el inicio de sesión')

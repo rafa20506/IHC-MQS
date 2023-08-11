@@ -36,7 +36,7 @@ class AreaProductos(models.Model):
 
 class Usuario(models.Model):
     ci=models.CharField(max_length=10)#primary key
-    vCliente=models.CharField(max_length=40)#foranea
+    #vCliente=models.CharField(max_length=40)#foranea
     telf=models.CharField(max_length=20)
     tipo=models.CharField(max_length=30)##foranea key
     correo=models.CharField(max_length=30)
