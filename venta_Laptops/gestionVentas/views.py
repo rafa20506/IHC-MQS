@@ -9,6 +9,12 @@ from .forms import FormularioAgregarPrd
 
 from django.contrib.auth import authenticate
 from gestionVentas.models import Usuario
+
+
+from django.contrib.messages import constants as messages
+
+import sweetify
+
 # Create your views here.
 def busqueda_productos(request):
 
@@ -93,17 +99,18 @@ def verificar(request):
         contraseniaa  = request.GET["contrasenia"]
         
         usuario = Usuario.objects.filter(correo=correo)
-        
         if usuario.exists():
             # Aquí puedes realizar la verificación de la contraseña de manera segura
             if usuario[0].contrasenia == contraseniaa:
                 #return HttpResponseRedirect("{% url 'Prueba' %}")  # Redireccionar a otra página
                 return render(request, "gestionVentas/prueba.html")
             else:
-                print("Contraseña incorrecta")
+               print("contraseña incorrecta")
+               
+                
         else:
             print("Usuario no encontrado")
     else:
         print("Parámetros faltantes")
     
-    return HttpResponse('Error en el inicio de sesión')
+    return render(request, "gestionVentas/login.html")

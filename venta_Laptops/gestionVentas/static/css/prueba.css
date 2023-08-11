@@ -2,21 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
 /*borra en vista movil*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 730px) {
     .ocultar-div{
         display:none;
     }
-}
-@media screen and (max-width: 600px) {
     .movilTitle{
         text-align: center;
     }
     .movilImg{
-        width: 250px;
-        height: 200px;
+        width: 50%;
+        height: 500px;
         border-radius: 5px;
     }
+    .movil{
+        border-top:#000;
+    }
 }
+
 *{
     margin: 0;
     padding: 0;
