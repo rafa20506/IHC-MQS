@@ -70,8 +70,16 @@
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
             <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
+                <form action="/search2" method="get">
+                    <div class=row>
+                        <div class="col-md-9">
+                            <input type="text" id="fname" name="fname" placeholder="buscar..." ><br>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="submit" value="Buscar">
+                        </div>
+                    </div>
+                </form>
             </div>
             <img src="{%static 'img/user.png'%}" alt="">
             <!--<img src="images/profile.jpg" alt="">-->

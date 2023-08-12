@@ -110,13 +110,21 @@ def addProducto(request):
     return render(request, "gestionVentas/agregar.html",{'miFormulario': formulario_prodcuto})
   
 def search2(request):
-    if "busqueda" in request.GET:
-        print(request.GET["busqueda"])
+    print(request.GET["fname"])
+    if "fname" in request.GET:
+        
+    
+        print(request.GET["fname"]+"entro")
         productos = Producto.objects.all()
-        return render(request, "gestionVentas/login.html", {"productos":productos})
+        #return render(request, "gestionVentas/login.html", {"productos":productos})
+        produc = request.GET["fname"]
+        #mensaje = "el articulo: %r " %request.GET["prd"] #saca el elemento del campo de buscar del html
+        articulos = Producto.objects.filter(marca__icontains=produc)
+
+        return render(request, "gestionVentas/laptops.html", {"productos": articulos, "query":produc})
 
     else:
-        print(request.GET["busqueda"]) 
+        
         return render(request, "gestionVentas/prueba.html")
 
 def verificar(request):
