@@ -46,11 +46,11 @@
                         <i class="uil uil-laptop"></i>
                         <span class="link-name">Laptops</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="">
                         <i class="uil uil-shopping-cart-alt"></i>
                         <span class="link-name">Ventas</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="{% url 'Search2' %}">
                         <i class="uil uil-credit-card"></i>
                         <span class="link-name">Vendidos</span>
                     </a></li>
@@ -81,9 +81,10 @@
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
             <div class="search-box">
-                <form action="/search" method="get">
-                <input type="text" placeholder="buscar..." method="get" name="busqueda">
-                <a href="{% url 'Search' %}" name="search" >
+                <form action="/search2" method="get">
+                <input type="text" placeholder="buscar..." name="busqueda">
+                
+                <a href="{% url 'login' %}" name="search2" >
                     <i class="uil uil-search"></i></a>
                 </form>
 

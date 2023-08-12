@@ -18,7 +18,7 @@ urlpatterns = [
 
     path('verificar', views.prueba, name="prueba"),# nombre de la direccion tiene que ser el mismo que en viwes
     path('search', views.search, name= "Search"),
-
+    path('search2',views.search2, name="Search2"),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

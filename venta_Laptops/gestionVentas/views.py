@@ -18,6 +18,7 @@ import sweetify
 
 
 
+
 def search(request):
     if request.GET["busqueda"]:
         print(request.GET["busqueda"])
@@ -96,8 +97,7 @@ def prueba(request):
         print(tendencia.marca)
     
     productos0 = Producto.objects.all()
-    for product in productos0:
-        print(product.marca)
+
     
     n=3
 
@@ -109,6 +109,16 @@ def addProducto(request):
     formulario_prodcuto = FormularioAgregarPrd()
     return render(request, "gestionVentas/agregar.html",{'miFormulario': formulario_prodcuto})
   
+def search2(request):
+    if "busqueda" in request.GET:
+        print(request.GET["busqueda"])
+        productos = Producto.objects.all()
+        return render(request, "gestionVentas/login.html", {"productos":productos})
+
+    else:
+        print(request.GET["busqueda"]) 
+        return render(request, "gestionVentas/prueba.html")
+
 def verificar(request):
     if "correo" in request.GET and "contrasenia" in request.GET:
         correo = request.GET["correo"]
