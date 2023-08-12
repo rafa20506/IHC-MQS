@@ -67,8 +67,11 @@ def homepi(request):
     return render(request, "gestionVentas/homepi.html")
 
 def prueba(request):
-    productos = Producto.objects.all()
-    return render(request, "gestionVentas/prueba.html", {"productos":productos})
+    productos0 = Producto.objects.all()
+    n=3
+
+    productos1=[productos0[i:i + n] for i in range(0, len(productos0), n)]
+    return render(request, "gestionVentas/prueba.html", {"productos1":productos1})
 
 
 def addProducto(request):

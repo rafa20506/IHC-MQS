@@ -157,62 +157,32 @@
                     <span class="text">todos los productos</span>
                 </div>
 
-                    
+
             </div>
-            {% for producto in productos  %}
+            {% for productos in productos1  %}
             <div class="wrapper2">
-                
+                {% for producto in productos  %}
                 <div class="card">
-                    <img src="{%static 'img/laptop.jpg'%}" alt="">
+                    <img src="{{producto.imagen.url}}" alt="">
                     <div class="content">
                         <div class="row">
                             <div class="details">
                                 <span>{{producto.marca}}</span>
-                                <p>{{producto.generacion}}</p>
+                                <p>{{producto.generacion}}th generacion</p>          
                             </div>
-                            <div class="price">$30</div>
+                            <div class="price">${{producto.precio}}</div>
                         </div>
                         <div class="buttons">
-                            <button>Buy Now</button>
-                            <button class="cart-btn">Add to Cart</button>
+                            <button>Comprar</button>
+                            <button class="cart-btn">Agregar</button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="{%static 'img/laptop.jpg'%}" alt="">
-                    <div class="content">
-                        <div class="row">
-                            <div class="details">
-                                <span>Apple Watch</span>
-                                <p>Premium digital watch</p>
-                            </div>
-                            <div class="price">$80</div>
-                        </div>
-                        <div class="buttons">
-                            <button>Buy Now</button>
-                            <button class="cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="{%static 'img/laptop.jpg'%}" alt="">
-                    <div class="content">
-                        <div class="row">
-                            <div class="details">
-                                <span>Apple Airpod</span>
-                                <p>Premium black airpod</p>
-                            </div>
-                            <div class="price">$50</div>
-                        </div>
-                        <div class="buttons">
-                            <button>Buy Now</button>
-                            <button class="cart-btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
+                {%  endfor  %}
+                
             </div>
-            {%  endfor  %}
         </div>
+        {%  endfor  %}
         
         
         </div>
