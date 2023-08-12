@@ -104,26 +104,7 @@ def prueba(request):
 def addProducto(request):
     formulario_prodcuto = FormularioAgregarPrd()
     return render(request, "gestionVentas/agregar.html",{'miFormulario': formulario_prodcuto})
-
-"""def verificar(request):#nombre de la funcion es la misma que en urls
-    
-    
-    if request.GET["correo"] :#revisamos que tenga contenido el campo
-        correo="%r" %request.GET["correo"] # obtenemos el contenido
-        print(correo)
-        contrasenia="%r" %request.GET["contrasenia"]# obtenemos el contenido
-        usuario=Usuario.objects.filter(correo=correo) #consulta la base de datos ("columna" = "ingresado en input")
-        
-
-        print(len(usuario))
-        if 1 == len(usuario):
-            return render(request, "gestionVentas/prueba.html")#redireccionamiento a otra pagina 
-        else:
-            print("dasda")
-            return HttpResponse('hola')   
-    else:
-        return render(request, "gestionVentas/login.html")
-"""    
+  
 def verificar(request):
     if "correo" in request.GET and "contrasenia" in request.GET:
         correo = request.GET["correo"]
