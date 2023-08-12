@@ -1,0 +1,159 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, div, pre, code, address{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.cabeza{
+  
+    border-bottom: 8px solid #dff802; /* Línea en la parte inferior del header */
+    /*padding: 5px 0;  Espacio alrededor del header */
+    /*margin-bottom: 10px;*/
+
+    display: flex; /* Utilizamos flexbox para centrar vertical y horizontalmente */
+    justify-content: center; 
+    align-items: center;
+    
+    position: relative;
+
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 150px;
+}
+.cabeza img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+
+h1{
+    position: absolute;
+    font: bold 2.4em Verdana;
+    background: -webkit-linear-gradient(top, rgb(1, 189, 247), rgb(126, 207, 231));
+    width: 20%;
+    border-radius: 10px;
+    margin: 15px auto;
+    text-align: center;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    box-shadow: rgb(1, 189, 247) 5px 5px 10px;
+    transform: translate(-50%, -50%);
+    /*text-shadow: #000000 2px 2px 3px;*/
+
+}
+
+.barra-navegacion {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #293353;
+    color: #fff;
+  }
+  
+p{ 
+   
+    font: bold 2.4em Verdana;
+    position: absolute;
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    bottom: 15px;
+
+    
+}
+
+.contenedor-botones {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+} 
+button{
+    background-color: rgb(1, 189, 247);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    left: 10px;
+  }
+
+main {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%; /* La imagen no será más ancha que el contenedor */
+    max-height: 100%; /* La imagen no será más alta que el contenedor */
+    width: auto; /* La imagen se escalará proporcionalmente */
+    height: auto; /* La imagen se escalará proporcionalmente */
+}
+.pie-pagina{
+    width: 100%;
+    background-color: #0a141d;
+}
+.pie-pagina .grupo-1{
+    width:  100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width:  100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width:  250px;
+    
+    
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px; 
+}
+.pie-pagina .grupo-1 .box h3{
+    color: #bbb8b8;
+    margin-bottom: 10px;
+    
+}
+.pie-pagina .grupo-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #ffffff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+
+    
+}
+
+

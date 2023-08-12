@@ -1,0 +1,65 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/landingEstilo.css'%}">
+
+    <link rel="icon" href="{%static 'img/logo.jpg' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>MQS</title>
+  </head>
+  <body>
+    <header class="cabeza">
+      <img src="{%static 'img/logo.jpg' %}" alt="" width="300" height="135" />
+      <div class="bienvenido">
+        <h1>Bienvenido</h1>
+      </div>
+    </header>
+    <div class="barra-navegacion">
+      <div class="contenedor-texto">
+        <p>Server web - MQS</p>
+      </div>
+      <div class="contenedor-botones">
+        
+        <a href="{% url 'login' %}"><button>Iniciar Sesión</button></a>
+      </div>
+    </div>
+    <section>
+      <main>
+        <img src="{%static 'img/portada.jpg'%}" alt="" />
+      </main>
+    </section>
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <img src="{%static 'img/logo.jpg'%}" alt="Logo" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>SOBRE NOSOTROS</h2>
+          <h3>Somos una tienda especializada en ventas de Laptos, Noteboks.</h3>
+          <h3>
+            Si no sabes cual es la adecuada para ti, entonces estas en el sitio
+            correcto.
+          </h3>
+        </div>
+        <div class="box">
+          <h2>CONTACTOS</h2>
+          <h3>Email: xxxxxxx@gmail.com</h3>
+          <h3>whatsapp: +591 77777777</h3>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small>
+          &copy; 2023 <b>Server web</b> - Todos los derechos Reservados.
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>

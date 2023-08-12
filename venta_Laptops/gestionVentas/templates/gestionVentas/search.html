@@ -81,40 +81,13 @@
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
             <div class="search-box">
-                <form action="/search" method="get">
-                <input type="text" placeholder="buscar..." method="get" name="busqueda">
-                <a href="{% url 'Search' %}" name="search" >
-                    <i class="uil uil-search"></i></a>
-                </form>
-
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here..." action="/search" method="get" name="busqueda">
             </div>
-            
             <img src="{%static 'img/user.png'%}" alt="">
             <!--<img src="images/profile.jpg" alt="">-->
         </div>
         <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Tendencias</span>
-                </div>
-                <div class="wrapper">
-                    <i id="left" class="fa-solid fa-angle-left"></i>
-                    <ul class="carousel">
-                        {% for tendencia in tendencias %}
-                        <li class="card">
-                            <div class="img"><img src="{{tendencia.imagen.url}}" draggable="false" class="mediana">
-                            </div>
-                            <h2>{{tendencia.serialNumber}}</h2>
-                            <span>{{tendencia.modelo}}</span>
-                        </li>
-                        {%endfor%}
-
-                    </ul>
-                    <i id="right" class="fa-solid fa-angle-right"></i>
-                </div>
-                
-            </div>
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
@@ -146,11 +119,8 @@
                 
             </div>
         </div>
-        {%  endfor  %}
-        
-        
+        {%  endfor  %}    
         </div>
-       
         </div>
         </div>
     </section>

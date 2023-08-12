@@ -16,10 +16,17 @@ from django.contrib.messages import constants as messages
 
 import sweetify
 
-# Create your views here.
-def busqueda_productos(request):
 
-    return render(request, "busqueda_Producto.html")
+
+def search(request):
+    if request.GET["busqueda"]:
+        print(request.GET["busqueda"])
+        produc = request.GET["busqueda"]
+    articulos = Producto.objects.get(marca__icontains=produc)
+    n=3
+    print(request.GET["busqueda"])
+    productos1=[articulos[i:i + n] for i in range(0, len(articulos), n)]
+    return render(request, "gestionVentas/search.html",{"productos": productos1})
 
 def buscar(request):
     if request.GET["prd"]:
@@ -37,9 +44,9 @@ def pruebaLogin(request):
     return render(request,"inicio.html")
     #return HttpResponse(mensaje)
 
-def ladingPage(request):
+def landing(request):
 
-    return render(request, "gestionVentas/ladingPage.html")
+    return render(request, "gestionVentas/landing.html")
     #return HttpResponse("LadingPage")
 
 def home(request):
@@ -48,10 +55,7 @@ def home(request):
 
 def login(request):
     return render(request, "gestionVentas/login.html")
-    if "ingresar" in request.POST:
-        return render(request, "gestionVentas/prueba.html")
-    else:
-        return render(request, "gestionVentas/login.html")
+    
     #return HttpResponse("Home")
 
 def laptops(request):
@@ -115,7 +119,7 @@ def verificar(request):
             # Aquí puedes realizar la verificación de la contraseña de manera segura
             if usuario[0].contrasenia == contraseniaa:
                 #return HttpResponseRedirect("{% url 'Prueba' %}")  # Redireccionar a otra página
-                return render(request, "gestionVentas/prueba.html")
+                return render(request, "gestionVentas/laptops.html")
             else:
                print("contraseña incorrecta")
                
@@ -126,3 +130,6 @@ def verificar(request):
         print("Parámetros faltantes")
     
     return render(request, "gestionVentas/login.html")
+
+def cerrarSesion(request):
+    return render(request, "gestionVentas/landing.html")
