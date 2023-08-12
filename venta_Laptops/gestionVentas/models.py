@@ -20,7 +20,6 @@ class Producto(models.Model):
 
 class Venta(models.Model):
     vSerialNumber=models.CharField(max_length=20)
-    total=models.FloatField()
     ci=models.CharField(max_length=10)
     
     fecha=models.DateTimeField()
@@ -35,7 +34,7 @@ class AreaProductos(models.Model):
     serialNumber=models.CharField(max_length=20) ##foranea key
 
 class Usuario(models.Model):
-    ci=models.CharField(max_length=10)#primary key
+    #ci=models.CharField(max_length=10)#primary key
     #vCliente=models.CharField(max_length=40)#foranea
     telf=models.CharField(max_length=20)
     tipo=models.CharField(max_length=30)##foranea key

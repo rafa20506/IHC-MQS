@@ -96,36 +96,14 @@
                 <div class="wrapper">
                     <i id="left" class="fa-solid fa-angle-left"></i>
                     <ul class="carousel">
+                        {% for tendencia in tendencias %}
                         <li class="card">
-                            <div class="img"><img src="{%static 'img/laptop.jpg'%}" draggable="false" class="mediana">
+                            <div class="img"><img src="{{tendencia.imagen.url}}" draggable="false" class="mediana">
                             </div>
-                            <h2>Blanche Pearson</h2>
-                            <span>Sales Manager</span>
+                            <h2>{{tendencia.serialNumber}}</h2>
+                            <span>{{tendencia.modelo}}</span>
                         </li>
-                        <li class="card">
-                            <div class="img"><img src="{%static 'img/laptop.jpg'%}" draggable="false" class="mediana">
-                            </div>
-                            <h2>Joenas Brauers</h2>
-                            <span>Web Developer</span>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="{%static 'img/laptop.jpg'%}" draggable="false" class="mediana">
-                            </div>
-                            <h2>Blanche Pearson</h2>
-                            <span>Sales Manager</span>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="{%static 'img/laptop.jpg'%}" draggable="false" class="mediana">
-                            </div>
-                            <h2>Blanche Pearson</h2>
-                            <span>Sales Manager</span>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="{%static 'img/laptop.jpg'%}" draggable="false" class="mediana">
-                            </div>
-                            <h2>Blanche Pearson</h2>
-                            <span>Sales Manager</span>
-                        </li>
+                        {%endfor%}
 
                     </ul>
                     <i id="right" class="fa-solid fa-angle-right"></i>
@@ -167,7 +145,7 @@
                     <div class="content">
                         <div class="row">
                             <div class="details">
-                                <span>{{producto.marca}}</span>
+                                <span>{{producto.serialNumber}}</span>
                                 <p>{{producto.generacion}}th generacion</p>          
                             </div>
                             <div class="price">${{producto.precio}}</div>

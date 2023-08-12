@@ -3,13 +3,14 @@ from django.http import HttpResponse
 from django.shortcuts import render, HttpResponseRedirect
 from gestionVentas.models import Producto
 
-from gestionVentas.models import Producto
+from gestionVentas.models import Producto,Venta
 
 from .forms import FormularioAgregarPrd
 
 from django.contrib.auth import authenticate
 from gestionVentas.models import Usuario
 
+from collections import Counter
 
 from django.contrib.messages import constants as messages
 
@@ -67,11 +68,37 @@ def homepi(request):
     return render(request, "gestionVentas/homepi.html")
 
 def prueba(request):
+    ventas=Venta.objects.all()
+    serials=[]
+    for venta in ventas:
+        serials.append(venta.vSerialNumber)
+    counter = Counter(serials)
+    first, second,threeth,fourth,fifth, *_, last = counter.most_common()
+    tendencias=[]
+    prodcutTendencia=Producto.objects.get(serialNumber__icontains=first[0])
+    tendencias.append(prodcutTendencia)
+    prodcutTendencia=Producto.objects.get(serialNumber__icontains=second[0])
+    tendencias.append(prodcutTendencia)
+    prodcutTendencia=Producto.objects.get(serialNumber__icontains=threeth[0])
+    tendencias.append(prodcutTendencia)
+    prodcutTendencia=Producto.objects.get(serialNumber__icontains=fourth[0])
+    tendencias.append(prodcutTendencia)
+    prodcutTendencia=Producto.objects.get(serialNumber__icontains=fifth[0])
+    tendencias.append(prodcutTendencia)
+    
+    print(first[0])
+
+    for tendencia in tendencias:
+        print(tendencia.marca)
+    
     productos0 = Producto.objects.all()
+    for product in productos0:
+        print(product.marca)
+    
     n=3
 
     productos1=[productos0[i:i + n] for i in range(0, len(productos0), n)]
-    return render(request, "gestionVentas/prueba.html", {"productos1":productos1})
+    return render(request, "gestionVentas/prueba.html", {"productos1":productos1,"tendencias":tendencias})
 
 
 def addProducto(request):
