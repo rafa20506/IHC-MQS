@@ -119,9 +119,11 @@ def search2(request):
         #return render(request, "gestionVentas/login.html", {"productos":productos})
         produc = request.GET["fname"]
         #mensaje = "el articulo: %r " %request.GET["prd"] #saca el elemento del campo de buscar del html
-        articulos = Producto.objects.filter(marca__icontains=produc)
+        articulos2 = Producto.objects.filter(marca__icontains=produc)
+        n=3
 
-        return render(request, "gestionVentas/laptops.html", {"productos": articulos, "query":produc})
+        articulos=[articulos2[i:i + n] for i in range(0, len(articulos2), n)]
+        return render(request, "gestionVentas/search2.html", {"articulos": articulos, "query":produc})
 
     else:
         
